@@ -1,19 +1,19 @@
 import React from 'react'
 import { object } from 'prop-types'
 
-export class IOProvider extends React.Component {
+export class ApiProvider extends React.Component {
   static propTypes = {
     children: object,
-    io: object.isRequired,
+    api: object.isRequired,
   }
 
   static childContextTypes = {
-    io: object,
+    api: object,
   }
 
   getChildContext() {
-    const { io } = this.props
-    return { io }
+    const { api } = this.props
+    return { api }
   }
 
   render() {

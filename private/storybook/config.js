@@ -5,10 +5,9 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import configureStore from 'store/configure'
-import api from 'services/api'
 import theme from 'components/themes/default'
 
-const store = configureStore({}, { api: api.create() })
+const store = configureStore({})
 const req = require.context('components', true, /.stories.js$/)
 
 function loadStories() {

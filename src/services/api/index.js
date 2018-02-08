@@ -1,97 +1,51 @@
-// https://github.com/diegohaz/arc/wiki/API-service
-import 'whatwg-fetch'
-import { stringify } from 'query-string'
-import merge from 'lodash/merge'
-import { apiUrl } from 'config'
+import { api } from 'config'
+import { ApiProvider } from './provider/ApiProvider'
 
-export const checkStatus = (response) => {
-  if (response.ok) {
-    return response
-  }
-  const error = new Error(`${response.status} ${response.statusText}`)
-  error.response = response
-  throw error
-}
+let client
 
-export const parseJSON = response => response.json()
+const isFunction = cb => typeof cb === 'function'
 
-export const parseSettings = ({
-  method = 'get', data, locale, ...otherSettings
-} = {}) => {
-  const headers = {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    'Accept-Language': locale,
-  }
-  const settings = merge({
-    body: data ? JSON.stringify(data) : undefined,
-    method,
-    headers,
-  }, otherSettings)
-  return settings
-}
-
-export const parseEndpoint = (endpoint, params) => {
-  const url = endpoint.indexOf('http') === 0 ? endpoint : apiUrl + endpoint
-  const querystring = params ? `?${stringify(params)}` : ''
-  return `${url}${querystring}`
-}
-
-const api = {}
-
-api.request = (endpoint, { params, ...settings } = {}) =>
-  fetch(parseEndpoint(endpoint, params), parseSettings(settings))
-    .then(checkStatus)
-    .then(parseJSON)
-
-;['delete', 'get'].forEach((method) => {
-  api[method] = (endpoint, settings) => api.request(endpoint, { method, ...settings })
-})
-
-;['post', 'put', 'patch'].forEach((method) => {
-  api[method] = (endpoint, data, settings) => api.request(endpoint, { method, data, ...settings })
-})
-
-api.create = (settings = {}) => ({
-  settings,
-
-  setToken(token) {
-    this.settings.headers = {
-      ...this.settings.headers,
-      Authorization: `Bearer ${token}`,
+const getInstance = (connectAction, disconnectAction) => {
+  if (!client) {
+  
+    const commonHeaderParams = {
+      "X-Mashape-Key": 'jjU3umuHAamshSS9d64I2OwBVDQBp1mq9eJjsne63JShIcTnhL',
+      "Accept": 'application/json',
     }
-  },
-
-  unsetToken() {
-    this.settings.headers = {
-      ...this.settings.headers,
-      Authorization: undefined,
+    
+    const postHeaderParams = {
+      "Content-Type": 'application/x-www-form-urlencoded',
     }
-  },
 
-  request(endpoint, settings) {
-    return api.request(endpoint, merge({}, this.settings, settings))
-  },
+    const getRandomUser = () => {
+      const headers = new Header(commonHeaderParams)
+      return fetch(api.url, {
+        method: 'get',
+        header,
+      })
+    }
 
-  post(endpoint, data, settings) {
-    return this.request(endpoint, { method: 'post', data, ...settings })
-  },
+    const postRandomUser = () => {
+      const headers = new Header(Object.assign(commonHeaderParams, postHeaderParams))
+      return fetch(api.url, {
+        method: 'post',
+        header,
+      })
+    }
 
-  get(endpoint, settings) {
-    return this.request(endpoint, { method: 'get', ...settings })
-  },
+    client = {
+      getRandomUser,
+      postRandomUser,
+    }
+  }
+  return client
+}
 
-  put(endpoint, data, settings) {
-    return this.request(endpoint, { method: 'put', data, ...settings })
-  },
+const apiService = {
+  getInstance,
+}
 
-  patch(endpoint, data, settings) {
-    return this.request(endpoint, { method: 'patch', data, ...settings })
-  },
-
-  delete(endpoint, settings) {
-    return this.request(endpoint, { method: 'delete', ...settings })
-  },
-})
-
-export default api
+export {
+  apiService,
+  ApiProvider,
+}

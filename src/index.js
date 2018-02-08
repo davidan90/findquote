@@ -6,11 +6,10 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 
 import configureStore from 'store/configure'
-import api from 'services/api'
 import App from 'containers/App'
 import 'semantic-ui-css/semantic.min.css'
 
-const store = configureStore({}, { api: api.create() })
+const store = configureStore({})
 
 const renderApp = () => (
   <Provider store={store}>

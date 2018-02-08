@@ -6,20 +6,16 @@ const config = {
     isDev: process.env.NODE_ENV !== 'production',
     basename: process.env.PUBLIC_PATH,
     isBrowser: typeof window !== 'undefined',
-    apiUrl: 'https://jsonplaceholder.typicode.com',
-    io: {
-      socketUrl: 'ws://10.5.3.14:9000',
-      options: {
-        path: '/socket.io-client',
-        reconnectionAttempts: 5,
-        reconnectionDelay: 2000,
-      },
+    api: {
+      url: 'https://andruxnet-random-famous-quotes.p.mashape.com',
     },
   },
   test: {},
   development: {},
   production: {
-    apiUrl: 'https://jsonplaceholder.typicode.com',
+    api: {
+      url: 'https://andruxnet-random-famous-quotes.p.mashape.com',
+    },
   },
 }
 
