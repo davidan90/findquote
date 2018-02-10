@@ -17,6 +17,7 @@ const switchHeight = (size) => {
 } 
 
 const FQButton = styled.button`
+    margin: 0 0.2em;
     color: ${props => props.color ? props.color : 'black'};
     height: ${props => switchHeight(props.size)};
 `

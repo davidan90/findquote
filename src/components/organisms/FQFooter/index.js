@@ -15,9 +15,7 @@ const FQFooter = props => (
         bkColor={props.bkColor}
         height={props.height}
     >
-        <div>link</div>
-        <div>link</div>
-        <div>link</div>
+    {/* TODO */}
     </FQFooterWrapper>
 )
 
