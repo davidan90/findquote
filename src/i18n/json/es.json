@@ -1,91 +1,10 @@
 {
   "global": {
-    "save": "Guardar",
-    "cancel": "Cancelar",
-    "continue": "Continuar",
-    "exit": "Salir",
-    "error": "Error"
+
   },
-  "theme": {
-    "day": "Modo Normal",
-    "night": "Modo Nocturno"
-  },
-  "login": {
-    "title": "Filtros MIFID",
-    "btn-text": "Acceder"
-  },
-  "logout": {
-    "btn-text": "Salir"
-  },
-  "not-found-page": {
-    "title": "Página no encontrada",
-    "go-home": "Volver al inicio"
-  },
-  "confirm": {
-    "sure": "¿Estás seguro?"
-  },
-  "main-menu": {
-    "title": "Filtros MIFID",
-    "nav": {
-      "filters": "Filtros",
-      "algorithms": "Algoritmos"
-    }
-  },
-  "filter": {
-    "crud-button": {
-      "review": "Ver",
-      "edit": "Editar",
-      "delete": "Eliminar"
-    },
-    "block-button": {
-      "block": "BLOQUEAR",
-      "block-kill": "BLOQUEAR Y ELIMINAR"
-    }
-  },
-  "filter-modal-form":{
-    "inputs": {
-      "id": "ID",
-      "app-id": "App ID",
-      "session-name": "Nombre sesión",
-      "client-id": "ID cliente",
-      "investor-id": "ID inversor",
-      "executor-id": "ID ejecutor",
-      "venue": "Lugar",
-      "algorithmic": "Algoritmo",
-      "white-list-isin": "Lista Blanca ISIN",
-      "black-list-isin": "Lista Negra ISIN",
-      "throttle-rate": "Tasa reguladora",
-      "max-quantity-session": "Max cantidad sesión",
-      "max-amount-session": "Max importe sesión"
-    }
-  },
-  "algorithm": {
-    "button": {
-      "review": "Ver",
-      "edit": "Editar",
-      "delete": "Eliminar"
-    }
-  },
-  "footer": {
-    "links": {
-      "column-1": {
-        "header": "Grupo 1",
-        "first": "Uno",
-        "second": "Dos",
-        "third": "Tres"
-      },
-      "column-2": {
-        "header": "Grupo 2",
-        "first": "Uno",
-        "second": "Dos",
-        "third": "Tres"
-      }
-    },
-    "bme": {
-      "site": "Sitio",
-      "contact": "Contactanos",
-      "terms": "Terminos y condiciones",
-      "privacy": "Política de privacidad"
+  "main-page": {
+    "button-text": {
+      "1": "Nueva cita"
     }
   }
 }

@@ -1,11 +1,11 @@
 
 import React from 'react'
-import { PageTemplate, ErrorBoundary } from 'components'
+import { PageTemplate, ErrorBoundary, FQButton, FQContainer } from 'components'
 
 const MainPage = () => (
   <PageTemplate>
     <ErrorBoundary>
-      MAIN
+      {/* TODO */}
     </ErrorBoundary>
   </PageTemplate>
 )

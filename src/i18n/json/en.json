@@ -1,91 +1,10 @@
 {
   "global": {
-    "save": "Save",
-    "cancel": "Cancel",
-    "continue": "Continue",
-    "exit": "Exit",
-    "error": "Error"
+
   },
-  "theme": {
-    "day": "Normal Mode",
-    "night": "Night Mode"
-  },
-  "login": {
-    "title": "MIFID filters",
-    "btn-text": "Login"
-  },
-  "logout": {
-    "btn-text": "LogOut"
-  },
-  "not-found-page": {
-    "title": "Get out of here!!",
-    "go-home": "Go back"
-  },
-  "confirm": {
-    "sure": "Are you sure?"
-  },
-  "main-menu": {
-    "title": "MIFID filters",
-    "nav": {
-      "filters": "Filters",
-      "algorithms": "Algorithms"
-    }
-  },
-  "filter": {
-    "crud-button": {
-      "review": "Review",
-      "edit": "Edit",
-      "delete": "Delete"
-    },
-    "block-button": {
-      "block": "BLOCK",
-      "block-kill": "BLOCK & KILL"
-    }
-  },
-  "filter-modal":{
-    "inputs": {
-      "id": "ID",
-      "app-id": "App ID",
-      "session-name": "Session name",
-      "client-id": "Client ID",
-      "investor-id": "Investor ID",
-      "executor-id": "Executor ID",
-      "venue": "Ex. venue",
-      "algorithmic": "Algorithmic",
-      "white-list-isin": "White ISIN list",
-      "black-list-isin": "Black ISIN list",
-      "throttle-rate": "Throttle rate",
-      "max-quantity-session": "Max quantity session",
-      "max-amount-session": "Max amount session"
-    }
-  },
-  "algorithm": {
-    "button": {
-      "review": "Review",
-      "edit": "Edit",
-      "delete": "Delete"
-    }
-  },
-  "footer": {
-    "links": {
-      "column-1": {
-        "header": "Group 1",
-        "first": "One",
-        "second": "Two",
-        "third": "Three"
-      },
-      "column-2": {
-        "header": "Group 2",
-        "first": "One",
-        "second": "Two",
-        "third": "Three"
-      }
-    },
-    "bme": {
-      "site": "Site",
-      "contact": "Contact us",
-      "terms": "Terms and conditions",
-      "privacy": "Privacy policy"
+  "main-page": {
+    "button-text": {
+      "1": "New quote"
     }
   }
 }

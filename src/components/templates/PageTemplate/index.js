@@ -1,29 +1,20 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React from 'react'
 import { any } from 'prop-types'
-import { Container } from 'semantic-ui-react'
+import { FQContainer } from 'components'
 
-export default class PageTemplate extends Component {
-  constructor(children) {
-    super(children)
-    this.state = {
-      visible: false,
-    }
-  }
-
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
-
-  render() {
-    const { visible } = this.state
-
-    return (
-      <Container>
-        {this.props.children}
-      </Container>
-    )
-  }
-}
+const PageTemplate = props => (
+  <FQContainer>
+    {/* TODO */}
+    {props.children}
+  </FQContainer>
+)
 
 PageTemplate.propTypes = {
-  children: any.isRequired,
+  children: any,
 }
+
+PageTemplate.defaultProps = {
+  children: <div></div>,
+}
+
+export default PageTemplate
