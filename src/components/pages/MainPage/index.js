@@ -4,9 +4,7 @@ import { PageTemplate, ErrorBoundary, FQButton, FQContainer } from 'components'
 
 const MainPage = () => (
   <PageTemplate>
-    <ErrorBoundary>
       {/* TODO */}
-    </ErrorBoundary>
   </PageTemplate>
 )
 
