@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ErrorDetails } from 'components'
+import { FQErrorDetails } from 'components'
 
 const errorMock = {
   trace: 'Woooooops!',
@@ -11,7 +11,7 @@ const errorInfoMock = {
   componentStack: 'U_U',
 }
 
-storiesOf('ErrorDetails', module)
+storiesOf('FQErrorDetails', module)
   .add('default', () => (
-    <ErrorDetails error={errorMock} errorInfo={errorInfoMock} />
+    <FQErrorDetails error={errorMock} errorInfo={errorInfoMock} />
   ))

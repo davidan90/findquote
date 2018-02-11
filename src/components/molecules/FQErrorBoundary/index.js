@@ -3,9 +3,9 @@ import { any } from 'prop-types'
 import { Container, Message } from 'semantic-ui-react'
 import { isDev } from 'config'
 import { I18nSpan } from 'i18n'
-import { ErrorDetails } from 'components'
+import { FQErrorDetails } from 'components'
 
-class ErrorBoundary extends React.Component {
+class FQErrorBoundary extends React.Component {
   static propTypes = {
     children: any,
   }
@@ -34,7 +34,7 @@ class ErrorBoundary extends React.Component {
             negative
             icon="x"
             header={<I18nSpan reference="global.error" />}
-            content={<ErrorDetails {...{ error, errorInfo }} />}
+            content={<FQErrorDetails {...{ error, errorInfo }} />}
           />
         </Container>
       ) : null
@@ -43,4 +43,4 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-export default ErrorBoundary
+export default FQErrorBoundary

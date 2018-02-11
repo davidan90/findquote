@@ -3,7 +3,7 @@ import { string, element, arrayOf, oneOfType } from 'prop-types'
 import styled from 'styled-components'
 
 const FQContainer = styled.div`
-    display: flex;
+    display: block;
     margin: 1em;
     position: relative;
     height: ${props => props.height ? props.height : 'auto'};

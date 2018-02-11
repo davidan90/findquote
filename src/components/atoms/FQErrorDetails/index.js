@@ -1,7 +1,7 @@
 import React from 'react'
 import { object } from 'prop-types'
 
-const ErrorDetails = props => (
+const FQErrorDetails = props => (
   <details style={{ whiteSpace: 'pre-wrap' }}>
     {props.error && props.error.toString()}
     <br />
@@ -9,9 +9,9 @@ const ErrorDetails = props => (
   </details>
 )
 
-ErrorDetails.propTypes = {
+FQErrorDetails.propTypes = {
   error: object.isRequired,
   errorInfo: object.isRequired,
 }
 
-export default ErrorDetails
+export default FQErrorDetails

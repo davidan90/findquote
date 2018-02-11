@@ -3,7 +3,7 @@ import { string } from 'prop-types'
 import styled from 'styled-components'
 
 const FQInputWrapper = styled.div`
-    display: block;
+    display: inline-block;
     margin 0 0.2em;
     height: ${props => props.height ? props.height : 'auto'};
     width: ${props => props.width ? props.width : 'auto'};
