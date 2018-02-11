@@ -1,5 +1,6 @@
 import React from 'react'
-import { FQInput, FQButton, FQParagraph, FQContainer } from 'components'
+import { FQInput, FQParagraph, FQContainer } from 'components'
+import { FQButton } from 'containers'
 
 const FQManager = () => (
     <div>

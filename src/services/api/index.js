@@ -9,7 +9,7 @@ const getInstance = (connectAction, disconnectAction) => {
   if (!client) {
   
     const commonHeaderParams = {
-      "X-Mashape-Key": 'jjU3umuHAamshSS9d64I2OwBVDQBp1mq9eJjsne63JShIcTnhL',
+      "X-Mashape-Key": 'CbwqlFWW4fmshY3PtiLFrCBkI7qqp1MaCNyjsnIt1xcN1JLrwC',
       "Accept": 'application/json',
     }
     
@@ -17,25 +17,26 @@ const getInstance = (connectAction, disconnectAction) => {
       "Content-Type": 'application/x-www-form-urlencoded',
     }
 
-    const getRandomUser = () => {
-      const headers = new Header(commonHeaderParams)
+    const getRandomQuote = () => {
+      const headers = new Headers(commonHeaderParams)
       return fetch(api.url, {
         method: 'get',
-        header,
+        headers,
+        mode: 'cors'
       })
     }
 
-    const postRandomUser = () => {
-      const headers = new Header(Object.assign(commonHeaderParams, postHeaderParams))
+    const postRandomQuote = () => {
+      const headers = new Headers(Object.assign(commonHeaderParams, postHeaderParams))
       return fetch(api.url, {
         method: 'post',
-        header,
+        headers,
       })
     }
 
     client = {
-      getRandomUser,
-      postRandomUser,
+      getRandomQuote,
+      postRandomQuote,
     }
   }
   return client
