@@ -20,9 +20,6 @@ class FQButtonContainer extends React.Component {
         } = this.context
         this.setState({loading: true})
         api.getRandomQuote()
-            .then(response => {
-                return response.json()
-            })
             .then( data => {
                 console.log('Data:', data)
                 this.setState({loading: false})

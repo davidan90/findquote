@@ -7,12 +7,12 @@ const isFunction = cb => typeof cb === 'function'
 
 const getInstance = (connectAction, disconnectAction) => {
   if (!client) {
-  
+
     const commonHeaderParams = {
       "X-Mashape-Key": 'CbwqlFWW4fmshY3PtiLFrCBkI7qqp1MaCNyjsnIt1xcN1JLrwC',
       "Accept": 'application/json',
     }
-    
+
     const postHeaderParams = {
       "Content-Type": 'application/x-www-form-urlencoded',
     }
@@ -22,7 +22,8 @@ const getInstance = (connectAction, disconnectAction) => {
       return fetch(api.url, {
         method: 'get',
         headers,
-        mode: 'cors'
+      }).then(response => {
+        return response.json()
       })
     }
 
@@ -31,6 +32,8 @@ const getInstance = (connectAction, disconnectAction) => {
       return fetch(api.url, {
         method: 'post',
         headers,
+      }).then(response => {
+        return response.json()
       })
     }
 
