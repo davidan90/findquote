@@ -1,14 +1,13 @@
-// https://github.com/diegohaz/arc/wiki/Reducers
 import camelCase from 'lodash/camelCase'
 import { combineReducers } from 'redux'
 import { reducer as form } from 'redux-form'
 import { reducer as thunk } from 'redux-saga-thunk'
 
-import * as entities from './entities/reducer'
+import * as quotes from './quotes/reducer'
 import * as options from './options/reducer'
 
 const reducers = {
-  entities,
+  quotes,
   options,
   form,
   thunk,
