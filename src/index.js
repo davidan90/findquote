@@ -1,4 +1,3 @@
-// https://github.com/diegohaz/arc/wiki/Example-app
 import 'react-hot-loader/patch'
 import 'babel-polyfill'
 import React from 'react'
@@ -7,7 +6,6 @@ import { Provider } from 'react-redux'
 
 import configureStore from 'store/configure'
 import App from 'containers/App'
-import 'semantic-ui-css/semantic.min.css'
 
 const store = configureStore({})
 

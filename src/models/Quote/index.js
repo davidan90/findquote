@@ -1,4 +1,4 @@
-class Quote {
+export class Quote {
     constructor(quote = null, author = null, category = null) {
         this._quote = quote
         this._author = author
