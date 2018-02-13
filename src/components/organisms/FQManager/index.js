@@ -1,8 +1,9 @@
 import React from 'react'
-import { FQInput, FQParagraph, FQContainer } from 'components'
+import { object } from 'prop-types'
+import { FQInput, FQContainer, FQQuote } from 'components'
 import { FQButton } from 'containers'
 
-const FQManager = () => (
+const FQManager = (props) => (
     <div>
         <FQContainer>
             <FQInput
@@ -13,11 +14,15 @@ const FQManager = () => (
             <FQButton />
         </FQContainer>
         <FQContainer>
-            <FQParagraph>
-                TODOOOO
-            </FQParagraph>
+            <FQQuote
+                lastQuote={props.lastQuote}
+            />
         </FQContainer>
     </div>
 )
+
+FQManager.propTypes = {
+    lastQuote: object,
+}
 
 export default FQManager

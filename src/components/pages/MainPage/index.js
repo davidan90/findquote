@@ -1,6 +1,7 @@
 
 import React from 'react'
-import { PageTemplate, FQManager } from 'components'
+import { FQManager } from 'containers' 
+import { PageTemplate } from 'components'
 
 const MainPage = () => (
   <PageTemplate>
