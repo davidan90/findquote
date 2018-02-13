@@ -1,12 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { object } from 'prop-types'
+import { object, func } from 'prop-types'
 import { FQButton } from 'components'
 import { quotesActions } from 'store/actions'
 
 class FQButtonContainer extends React.Component {
     static contextTypes = {
         api: object,
+    }
+
+    static propTypes = {
+        addQuote: func,
     }
 
     constructor(props){
@@ -20,10 +24,13 @@ class FQButtonContainer extends React.Component {
         const {
             api,
         } = this.context
+        const {
+            addQuote
+        } = this.props
         this.setState({loading: true})
         api.getRandomQuote()
             .then( data => {
-                console.log('Data:', data)
+                addQuote(data)
                 this.setState({loading: false})
             })
     }
