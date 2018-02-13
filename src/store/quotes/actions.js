@@ -16,7 +16,7 @@ const removeQuote = id => ({
   },
 })
 
-export const entitiesActions = {
+export const quotesActions = {
   addQuote,
   removeQuote,
 }

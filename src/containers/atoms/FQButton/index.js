@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { object } from 'prop-types'
 import { FQButton } from 'components'
+import { quotesActions } from 'store/actions'
 
 class FQButtonContainer extends React.Component {
     static contextTypes = {
@@ -40,4 +42,10 @@ class FQButtonContainer extends React.Component {
     }
 }
 
-export default FQButtonContainer
+const mapDispatchToProps = dispatch => ({
+    addQuote: (data) => {
+        dispatch(quotesActions.addQuote(data))
+    }
+})
+
+export default connect(null, mapDispatchToProps)(FQButtonContainer)
