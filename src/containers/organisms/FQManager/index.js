@@ -10,7 +10,6 @@ class FQManagerContainer extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log('constructor')
     }
 
     render() {
@@ -26,10 +25,8 @@ class FQManagerContainer extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        lastQuoteLoaded: state.quotes.lastQuoteLoaded,
-    }
-}
+const mapStateToProps = state => ({
+    lastQuoteLoaded: state.quotes.lastQuoteLoaded,
+})
 
 export default connect(mapStateToProps)(FQManagerContainer)

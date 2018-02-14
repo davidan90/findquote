@@ -11,7 +11,7 @@ export default (state = initialState, { type, payload }) => {
       const quote = new Quote(payload.quote, payload.author, payload.category)
       quote._id = quoteList.length;
       newState.currentList = newState.currentList.concat([quote])
-      newState.lastQuoteLoaded = Object.assign(newState.lastQuoteLoaded, quote)
+      newState.lastQuoteLoaded = quote
       break
     case REMOVE_QUOTE:
       newState.currentList = newState.currentList.slice(payload, 1)
