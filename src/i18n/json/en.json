@@ -2,8 +2,8 @@
   "global": {
 
   },
-  "main-page": {
-    "button-text": {
+  "fq-manager": {
+    "fq-button": {
       "1": "New quote"
     }
   }

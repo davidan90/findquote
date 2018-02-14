@@ -2,20 +2,23 @@ import React from 'react'
 import { object } from 'prop-types'
 import { FQInput, FQContainer, FQQuote } from 'components'
 import { FQButton } from 'containers'
+import { I18nSpan } from 'i18n'
 
 const FQManager = (props) => (
     <div>
         <FQContainer>
-            <FQInput
+            {/* <FQInput
                 type={'text'}
                 placeholder={'Example'}
                 width={'100%'}
-            />
-            <FQButton />
+            /> */}
+            <FQButton>
+                <I18nSpan reference={'fq-manager.fq-button.1'} />
+            </FQButton>
         </FQContainer>
         <FQContainer>
             <FQQuote
-                lastQuote={props.lastQuote}
+                quote={props.lastQuote}
             />
         </FQContainer>
     </div>

@@ -5,24 +5,24 @@ import { Quote } from '../../../models'
 
 const FQQuote = (props) => {
     const {
-        lastQuote
+        quote
     } = props
-    const quote = lastQuote ? new Quote(lastQuote._quote, lastQuote._author, lastQuote._category) : null
+    const q = quote ? new Quote(quote._quote, quote._author, quote._category) : null
     
-    return quote ? (
+    return q ? (
         <div>
             <FQParagraph>
-                {quote.quote}
+                {q.quote}
             </FQParagraph>
             <FQParagraph>
-                {quote.author}
+                {q.author}
             </FQParagraph>
         </div>
     ) : null
 }
 
 FQQuote.propTypes = {
-    lastQuote: object,
+    quote: object,
 }
 
 export default FQQuote

@@ -24,14 +24,12 @@ const FQButton = styled.button`
 `
 
 FQButton.propTypes = {
-    children: element,
     color: string,
     size: oneOf(['big', 'medium', 'small']),
 }
 
 FQButton.defaultProps = {
     children: <span>FQButton</span>,
-
 }
 
 export default FQButton

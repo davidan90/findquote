@@ -44,7 +44,9 @@ class FQButtonContainer extends React.Component {
             <FQButton
                 disabled={loading}
                 onClick={this.handleClick}
-            />
+            >
+                {this.props.children}
+            </FQButton>
         )
     }
 }
