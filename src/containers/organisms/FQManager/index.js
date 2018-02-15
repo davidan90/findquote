@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { object } from 'prop-types'
+import { object, arrayOf } from 'prop-types'
 import { FQManager } from 'components'
 
 class FQManagerContainer extends React.Component {
     static propTypes = {
-        lastQuoteLoaded: object,
+        quoteList: arrayOf(object),
     }
 
     constructor(props) {
@@ -14,19 +14,19 @@ class FQManagerContainer extends React.Component {
 
     render() {
         const {
-            lastQuoteLoaded
+            quoteList
         } = this.props
 
         return (
             <FQManager
-             lastQuote={lastQuoteLoaded}
+                listQuote={quoteList}
             />
         )
     }
 }
 
 const mapStateToProps = state => ({
-    lastQuoteLoaded: state.quotes.lastQuoteLoaded,
+    quoteList: state.quotes.currentList,
 })
 
 export default connect(mapStateToProps)(FQManagerContainer)

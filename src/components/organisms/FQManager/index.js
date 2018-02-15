@@ -1,6 +1,6 @@
 import React from 'react'
-import { object } from 'prop-types'
-import { FQInput, FQContainer, FQQuote } from 'components'
+import { object, arrayOf } from 'prop-types'
+import { FQInput, FQContainer, FQQuoteList } from 'components'
 import { FQButton } from 'containers'
 import { I18nSpan } from 'i18n'
 
@@ -17,15 +17,15 @@ const FQManager = (props) => (
             </FQButton>
         </FQContainer>
         <FQContainer>
-            <FQQuote
-                quote={props.lastQuote}
+            <FQQuoteList
+                quotes={props.listQuote}
             />
         </FQContainer>
     </div>
 )
 
 FQManager.propTypes = {
-    lastQuote: object,
+    listQuote: arrayOf(object),
 }
 
 export default FQManager
