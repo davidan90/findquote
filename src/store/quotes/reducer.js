@@ -9,18 +9,18 @@ export default (state = initialState, { type, payload }) => {
   switch (type) {
     case LOAD_QUOTE:
       quote = new Quote(payload.quote, payload.author, payload.category)
-      newState.lastQuoteLoaded = quote
+      newState.currentQuote = quote
       break
 
     case ADD_QUOTE:
       const quoteList = getAllQuotes(newState)
       quote = new Quote(payload.quote, payload.author, payload.category)
       quote._id = quoteList.length;
-      newState.currentList = newState.currentList.concat([quote])
+      newState.quoteList = newState.quoteList.concat([quote])
       break
 
     case REMOVE_QUOTE:
-      newState.currentList = newState.currentList.slice(payload, 1)
+      newState.quoteList = newState.quoteList.slice(payload, 1)
       break
 
     default:

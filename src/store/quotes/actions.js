@@ -1,7 +1,7 @@
 import { LOAD_QUOTE, ADD_QUOTE, REMOVE_QUOTE } from './constants'
 
 const loadQuote = ({ quote, author, category }) => ({
-  type: ADD_QUOTE,
+  type: LOAD_QUOTE,
   payload: {
     quote,
     author,
