@@ -15,7 +15,7 @@ FQContainer.propTypes = {
         element,
         arrayOf(element),
     ]),
-    display: bool,
+    inline: bool,
     height: string,
     width: string,
 }
