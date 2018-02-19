@@ -1,7 +1,9 @@
 import React from 'react'
 import { object } from 'prop-types'
 import { FQContainer, FQParagraph } from 'components'
+import { FQButton } from 'containers'
 import { Quote } from '../../../models'
+import { I18nSpan } from 'i18n'
 
 const FQQuote = (props) => {
     const {
@@ -20,6 +22,9 @@ const FQQuote = (props) => {
             <FQParagraph>
                 {q.author}
             </FQParagraph>
+            <FQButton>
+                <I18nSpan reference="fq-manager.fq-button.1"/>
+            </FQButton>
         </FQContainer>
     ) : null
 }
