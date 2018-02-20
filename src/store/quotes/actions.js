@@ -19,7 +19,7 @@ const addQuote = ({ quote, author, category }) => ({
 })
 
 const removeQuote = id => ({
-  type: UPDATE_FILTER_ENTITY,
+  type: REMOVE_QUOTE,
   payload: {
     id,
   },

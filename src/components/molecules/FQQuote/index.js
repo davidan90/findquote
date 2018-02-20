@@ -1,7 +1,6 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { bool, object } from 'prop-types'
 import { FQContainer, FQParagraph } from 'components'
-import { FQButton } from 'containers'
 import { Quote } from '../../../models'
 import { I18nSpan } from 'i18n'
 
@@ -22,15 +21,13 @@ const FQQuote = (props) => {
             <FQParagraph>
                 {q.author}
             </FQParagraph>
-            <FQButton>
-                <I18nSpan reference="fq-manager.fq-button.1"/>
-            </FQButton>
+            { props.children }
         </FQContainer>
     ) : null
 }
 
 FQQuote.propTypes = {
-    quote: object,
+    quote: object.isRequired,
 }
 
 export default FQQuote

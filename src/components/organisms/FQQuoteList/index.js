@@ -1,6 +1,8 @@
 import React from 'react'
 import { object, arrayOf } from 'prop-types'
-import { FQContainer, FQQuote } from 'components'
+import { FQContainer, FQButton } from 'components'
+import { FQQuote } from 'containers'
+import { I18nSpan } from 'i18n'
 
 const FQQuoteList = props => (
     <FQContainer
@@ -9,10 +11,16 @@ const FQQuoteList = props => (
     >
         <ul>
             {
-                props.quotes.map(quote => (
-                    <FQQuote
+                props.quotes.map((quote, index) => (
+                    <FQQuote 
+                        key={index}
                         quote={quote}
-                    />
+                        quoteAdded
+                    >
+                        <FQButton>
+                            <I18nSpan reference="fq-manager.fq-button.2"/>
+                        </FQButton>
+                    </FQQuote>
                 ))
             }
         </ul>
