@@ -30,7 +30,7 @@ class FQQuoteContainer extends React.Component {
     render() {
         const { quote, quoteAdded } = this.props
 
-        return (
+        return quote ? (
             <FQQuote
                 quote={quote}
             >
@@ -51,7 +51,7 @@ class FQQuoteContainer extends React.Component {
                 }
 
             </FQQuote>
-        )
+        ): null
     }
 }
 

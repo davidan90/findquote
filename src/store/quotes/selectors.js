@@ -2,7 +2,7 @@ import { Quote } from '../../models'
 
 export const initialState = {
   quoteList: [],
-  currentQuote: new Quote(),
+  currentQuote: undefined,
 }
 
 export const getAllQuotes = (state = initialState) => state.quoteList || []
