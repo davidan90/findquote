@@ -4,7 +4,8 @@
   },
   "fq-manager": {
     "fq-button": {
-      "1": "Añadir cita"
+      "1": "Añadir cita",
+      "2": "Eliminar cita"
     }
   }
 }

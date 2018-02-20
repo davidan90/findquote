@@ -4,7 +4,8 @@
   },
   "fq-manager": {
     "fq-button": {
-      "1": "Add quote"
+      "1": "Add quote",
+      "2": "Remove quote"
     }
   }
 }
