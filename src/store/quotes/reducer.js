@@ -17,7 +17,7 @@ export default (state = initialState, { type, payload }) => {
       break
 
     case REMOVE_QUOTE:
-      newState.quoteList = newState.quoteList.filter(q => q.quote !== payload.quote)
+      newState.quoteList = newState.quoteList.filter(q => q._quote !== payload.quote)
       break
 
     default:

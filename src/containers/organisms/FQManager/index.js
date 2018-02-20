@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { object, instanceOf } from 'prop-types'
+import { object ,instanceOf } from 'prop-types'
 import { FQManager } from 'components'
 import { quotesActions } from 'store/actions'
 import { Quote } from '../../../models/index';
@@ -35,16 +35,19 @@ class FQManagerContainer extends React.Component {
     render() {
         const { currentQuote } = this.props
 
-        return (
+        return currentQuote ? (
             <FQManager
                 quoteLoaded={currentQuote}
             />
-        )
+        ) : null
     }
 }
 
 const mapStateToProps = state => ({
-    currentQuote: state.quotes.currentQuote,
+    currentQuote: (() => {
+        const q = state.quotes.currentQuote
+        return new Quote(q._quote, q._author, q._category)
+    })(),
 })
 
 const mapDispatchToProps = dispatch => ({

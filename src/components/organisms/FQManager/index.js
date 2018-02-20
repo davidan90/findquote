@@ -1,8 +1,9 @@
 import React from 'react'
-import { object } from 'prop-types'
+import { object, instanceOf } from 'prop-types'
 import { FQContainer } from 'components'
 import { FQQuoteList, FQQuote } from 'containers'
 import { I18nSpan } from 'i18n'
+import { Quote } from '../../../models/index';
 
 const FQManager = (props) => (
     <FQContainer>
@@ -15,7 +16,7 @@ const FQManager = (props) => (
 )
 
 FQManager.propTypes = {
-    quoteLoaded: object,
+    quoteLoaded: instanceOf(Quote),
 }
 
 export default FQManager

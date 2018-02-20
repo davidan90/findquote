@@ -1,8 +1,9 @@
 import React from 'react'
-import { object, arrayOf } from 'prop-types'
+import { object, arrayOf, instanceOf } from 'prop-types'
 import { FQContainer, FQButton } from 'components'
 import { FQQuote } from 'containers'
 import { I18nSpan } from 'i18n'
+import { Quote } from '../../../models'
 
 const FQQuoteList = props => (
     <FQContainer
@@ -28,7 +29,7 @@ const FQQuoteList = props => (
 )
 
 FQQuoteList.propTypes = {
-    quotes: arrayOf(object).isRequired,
+    quotes: arrayOf(instanceOf(Quote)).isRequired,
 }
 
 export default FQQuoteList

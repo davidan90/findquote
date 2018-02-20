@@ -60,7 +60,7 @@ const mapDispatchToProps = dispatch => ({
         dispatch(quotesActions.addQuote(data))
     },
     removeQuote: (data) => {
-        dispatch(quotesActions.removeQuote(data._id))
+        dispatch(quotesActions.removeQuote(data.quote))
     }
 })
 
