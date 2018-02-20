@@ -18,10 +18,10 @@ const addQuote = ({ quote, author, category }) => ({
   },
 })
 
-const removeQuote = id => ({
+const removeQuote = quote => ({
   type: REMOVE_QUOTE,
   payload: {
-    id,
+    quote,
   },
 })
 

@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { object } from 'prop-types'
+import { object, instanceOf } from 'prop-types'
 import { FQManager } from 'components'
 import { quotesActions } from 'store/actions'
+import { Quote } from '../../../models/index';
 
 class FQManagerContainer extends React.Component {
     static contextTypes = {
@@ -10,7 +11,7 @@ class FQManagerContainer extends React.Component {
     }
 
     static propTypes = {
-        currentQuote: object,
+        currentQuote: instanceOf(Quote),
     }
 
     constructor(props) {

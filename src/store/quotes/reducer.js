@@ -4,23 +4,20 @@ import { Quote } from '../../models/index';
 
 export default (state = initialState, { type, payload }) => {
   let newState = Object.assign({}, state)
-  let quote;
 
   switch (type) {
     case LOAD_QUOTE:
-      quote = new Quote(payload.quote, payload.author, payload.category)
-      newState.currentQuote = quote
+      newState.currentQuote = new Quote(payload.quote, payload.author, payload.category)
       break
 
     case ADD_QUOTE:
-      const quoteList = getAllQuotes(newState)
-      quote = new Quote(payload.quote, payload.author, payload.category)
-      quote._id = quoteList.length;
-      newState.quoteList = newState.quoteList.concat([quote])
+      newState.quoteList = newState.quoteList.concat([
+        new Quote(payload.quote, payload.author, payload.category)
+      ])
       break
 
     case REMOVE_QUOTE:
-      newState.quoteList = newState.quoteList.slice(payload, 1)
+      newState.quoteList = newState.quoteList.filter(q => q.quote !== payload.quote)
       break
 
     default:
