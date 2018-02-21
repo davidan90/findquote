@@ -46,7 +46,7 @@ class FQManagerContainer extends React.Component {
 const mapStateToProps = state => ({
     currentQuote: (() => {
         const q = state.quotes.currentQuote
-        return new Quote(q._quote, q._author, q._category)
+        return q ? new Quote(q._quote, q._author, q._category) : null
     })(),
 })
 
