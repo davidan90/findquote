@@ -6,26 +6,21 @@ import { I18nSpan } from 'i18n'
 import { Quote } from '../../../models'
 
 const FQQuoteList = props => (
-    <FQContainer
-        width={'47%'}
-        inline
-    >
-        <ul>
-            {
-                props.quotes.map((quote, index) => (
-                    <FQQuote 
-                        key={index}
-                        quote={quote}
-                        quoteAdded
-                    >
-                        <FQButton>
-                            <I18nSpan reference="fq-manager.fq-button.2"/>
-                        </FQButton>
-                    </FQQuote>
-                ))
-            }
-        </ul>
-    </FQContainer>
+    <ul>
+        {
+            props.quotes.map((quote, index) => (
+                <FQQuote
+                    key={index}
+                    quote={quote}
+                    quoteAdded
+                >
+                    <FQButton>
+                        <I18nSpan reference="fq-manager.fq-button.2" />
+                    </FQButton>
+                </FQQuote>
+            ))
+        }
+    </ul>
 )
 
 FQQuoteList.propTypes = {

@@ -6,12 +6,22 @@ import { I18nSpan } from 'i18n'
 import { Quote } from '../../../models/index';
 
 const FQManager = (props) => (
-    <FQContainer>
-        <FQQuote
-            quote={props.quoteLoaded}
-            quoteAdded={false}
-        />
-        <FQQuoteList />
+    <FQContainer flex>
+        <FQContainer
+            width={'47%'}
+            inline
+        >
+            <FQQuote
+                quote={props.quoteLoaded}
+                quoteAdded={false}
+            />
+        </FQContainer>
+        <FQContainer
+            width={'47%'}
+            inline
+        >
+            <FQQuoteList />
+        </FQContainer>
     </FQContainer>
 )
 

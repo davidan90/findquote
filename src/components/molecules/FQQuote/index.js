@@ -11,10 +11,7 @@ const FQQuote = (props) => {
     // const q = quote ? new Quote(quote._quote, quote._author, quote._category) : null
     
     return quote ? (
-        <FQContainer
-            width={'47%'}
-            inline
-        >
+        <div>
             <FQParagraph>
                 {quote.quote}
             </FQParagraph>
@@ -22,7 +19,7 @@ const FQQuote = (props) => {
                 {quote.author}
             </FQParagraph>
             { props.children }
-        </FQContainer>
+        </div>
     ) : null
 }
 

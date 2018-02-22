@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const FQContainer = styled.div`
     margin: 1em;
     position: relative;
-    display: ${props => props.inline ? 'inline-block' : 'block'};
+    display: ${props => props.inline ? 'inline-block' : props.flex ? 'flex' : 'block'};
     height: ${props => props.height ? props.height : 'auto'};
     width: ${props => props.width ? props.width : 'auto'};
 `
@@ -16,6 +16,7 @@ FQContainer.propTypes = {
         arrayOf(element),
     ]),
     inline: bool,
+    flex: bool,
     height: string,
     width: string,
 }
