@@ -11,7 +11,9 @@ const store = configureStore({})
 
 const renderApp = () => (
   <Provider store={store}>
-      <App />
+      <App 
+        theme={'light'}
+      />
   </Provider>
 )
 
