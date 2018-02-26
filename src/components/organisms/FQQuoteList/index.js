@@ -1,12 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 import { object, arrayOf, instanceOf } from 'prop-types'
 import { FQContainer, FQButton } from 'components'
 import { FQQuote } from 'containers'
 import { I18nSpan } from 'i18n'
 import { Quote } from '../../../models'
 
+const _FQQuoteList = styled.ul`
+    margin: 0;
+    padding: 0;
+`
+
 const FQQuoteList = props => (
-    <ul>
+    <_FQQuoteList>
         {
             props.quotes.map((quote, index) => (
                 <FQQuote
@@ -20,7 +26,7 @@ const FQQuoteList = props => (
                 </FQQuote>
             ))
         }
-    </ul>
+    </_FQQuoteList>
 )
 
 FQQuoteList.propTypes = {
