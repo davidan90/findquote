@@ -17,8 +17,7 @@ const FQQuote = (props) => {
     const {
         quote
     } = props
-    // const q = quote ? new Quote(quote._quote, quote._author, quote._category) : null
-    
+
     return quote ? (
         <_FQQuote>
             <FQParagraph>
